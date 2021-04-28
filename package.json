@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "api-server": "json-server --port 4040 --delay 200 --watch db.json",
+    "api-server": "json-server --port 4040 --watch db.json",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
