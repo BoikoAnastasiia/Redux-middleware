@@ -3,12 +3,12 @@
     {
       "id": "id-1",
       "text": "Выучить основы React",
-      "completed": false
+      "completed": true
     },
     {
       "id": "id-2",
       "text": "Разобраться с React Router",
-      "completed": true
+      "completed": false
     },
     {
       "id": "id-3",
@@ -16,34 +16,14 @@
       "completed": true
     },
     {
-      "id": "id-4",
-      "text": "Попробовать React Hooks",
-      "completed": false
-    },
-    {
-      "text": "seeeeeeeeeeee",
-      "completed": true,
-      "id": "zp2mei0"
-    },
-    {
       "text": "cx vdx",
       "completed": true,
       "id": "WxJag64"
     },
     {
-      "text": "dvdsd",
-      "completed": true,
-      "id": "srvd-oY"
-    },
-    {
-      "text": "dsds",
-      "completed": true,
-      "id": "suuaNM3"
-    },
-    {
-      "text": "sssssssss",
+      "text": "ав",
       "completed": false,
-      "id": "Ek6aGWO"
+      "id": "4vtAoTW"
     }
   ]
 }

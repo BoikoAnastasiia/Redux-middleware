@@ -9,6 +9,7 @@ import IconButton from '../components/IconButton';
 import { ReactComponent as AddIcon } from '../icons/add.svg';
 import { connect } from 'react-redux';
 import todosOperations from '../redux/todos/todos-operations';
+import todosSelectors from '../redux/todos/todos-selectors';
 
 const barStyles = {
   display: 'flex',
@@ -55,7 +56,9 @@ class TodosView extends Component {
     );
   }
 }
-const mapStateToProps = state => ({ isLoadingTodos: state.todos.loading });
+const mapStateToProps = state => ({
+  isLoadingTodos: todosSelectors.getLoading(state),
+});
 
 const mapDispatchToProps = dispatch => ({
   fetchTodos: () => dispatch(todosOperations.fetchTodos()),
