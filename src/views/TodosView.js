@@ -10,6 +10,7 @@ import { ReactComponent as AddIcon } from '../icons/add.svg';
 import { connect } from 'react-redux';
 import todosOperations from '../redux/todos/todos-operations';
 import todosSelectors from '../redux/todos/todos-selectors';
+import CounterButton from '../components/CounterButton';
 
 const barStyles = {
   display: 'flex',
@@ -38,6 +39,7 @@ class TodosView extends Component {
       <Container>
         <div style={barStyles}>
           <Filter />
+          <CounterButton />
           <Stats />
           <IconButton onClick={this.toggleModal} aria-label="Добавить todo">
             <AddIcon width="40" height="40" fill="#fff" />

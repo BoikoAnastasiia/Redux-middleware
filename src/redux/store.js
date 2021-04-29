@@ -8,8 +8,8 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
 import todosReducer from './todos/todos-reducer';
+import counterReducer from '../redux/counter';
 
 // const myMiddleware = store => next => action => {
 //   console.log("my middleware", action)
@@ -29,6 +29,7 @@ const middleware = [
 const store = configureStore({
   reducer: {
     todos: todosReducer,
+    counter: counterReducer,
   },
 
   devTools: process.env.NODE_ENV === 'development',
