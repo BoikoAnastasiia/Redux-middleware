@@ -15,6 +15,7 @@ import {
   fetchTodosSuccess,
   fetchTodosError,
 } from './todos-actions';
+import { createFactory } from 'react';
 
 const items = createReducer([], {
   [fetchTodosSuccess]: (_, { payload }) => payload,
@@ -44,8 +45,11 @@ const loading = createReducer(false, {
   [toggleCompletedError]: () => false,
 });
 
+const error = createReducer(null, {});
+
 export default combineReducers({
   items,
   filter,
   loading,
+  error,
 });

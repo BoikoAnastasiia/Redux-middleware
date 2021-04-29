@@ -41,6 +41,7 @@ class TodosView extends Component {
           <IconButton onClick={this.toggleModal} aria-label="Добавить todo">
             <AddIcon width="40" height="40" fill="#fff" />
           </IconButton>
+          {this.props.isLoadingTodos && <p>loading </p>}
         </div>
 
         <TodoList />
@@ -54,9 +55,10 @@ class TodosView extends Component {
     );
   }
 }
+const mapStateToProps = state => ({ isLoadingTodos: state.todos.loading });
 
 const mapDispatchToProps = dispatch => ({
   fetchTodos: () => dispatch(todosOperations.fetchTodos()),
 });
 
-export default connect(null, mapDispatchToProps)(TodosView);
+export default connect(mapStateToProps, mapDispatchToProps)(TodosView);

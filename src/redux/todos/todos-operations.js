@@ -17,12 +17,23 @@ import {
 
 axios.defaults.baseURL = 'http://localhost:4040';
 
-const fetchTodos = () => dispatch => {
+// const fetchTodos = () => dispatch => {
+//   dispatch(fetchTodosRequest());
+//   axios
+//     .get('/todos')
+//     .then(({ data }) => dispatch(fetchTodosSuccess(data)))
+//     .catch(error => dispatch(fetchTodosError(error)));
+// };
+
+const fetchTodos = () => async dispatch => {
   dispatch(fetchTodosRequest());
-  axios
-    .get('/todos')
-    .then(({ data }) => dispatch(fetchTodosSuccess(data)))
-    .catch(error => dispatch(fetchTodosError(error)));
+
+  try {
+    const { data } = await axios.get('/todos');
+    dispatch(fetchTodosSuccess(data));
+  } catch (error) {
+    dispatch(fetchTodosError(error));
+  }
 };
 
 const addTodo = text => dispatch => {
