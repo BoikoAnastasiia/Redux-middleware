@@ -10,9 +10,20 @@ import {
   toggleCompletedRequest,
   toggleCompletedSuccess,
   toggleCompletedError,
+  fetchTodosRequest,
+  fetchTodosSuccess,
+  fetchTodosError,
 } from './todos-actions';
 
 axios.defaults.baseURL = 'http://localhost:4040';
+
+const fetchTodos = () => dispatch => {
+  dispatch(fetchTodosRequest());
+  axios
+    .get('/todos')
+    .then(({ data }) => dispatch(fetchTodosSuccess(data)))
+    .catch(error => dispatch(fetchTodosError(error)));
+};
 
 const addTodo = text => dispatch => {
   const todo = { text, completed: false };
@@ -43,4 +54,4 @@ const toggleCompleted = ({ id, completed }) => dispatch => {
     .catch(error => dispatch(toggleCompletedError(error)));
 };
 
-export default { addTodo, deleteTodo, toggleCompleted };
+export default { addTodo, deleteTodo, toggleCompleted, fetchTodos };

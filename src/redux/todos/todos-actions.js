@@ -2,6 +2,10 @@ import { createAction } from '@reduxjs/toolkit';
 
 // const asyncActionCreator = args => dispatch => {};
 
+export const fetchTodosRequest = createAction('todos/fetchTodosRequest');
+export const fetchTodosSuccess = createAction('todos/fetchTodosSuccess');
+export const fetchTodosError = createAction('todos/fetchTodosError');
+
 export const addTodoRequest = createAction('todos/addTodoRequest');
 export const addTodoSuccess = createAction('todos/addTodoSuccess');
 export const addTodoError = createAction('todos/addTodoError');

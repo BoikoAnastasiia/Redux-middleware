@@ -4,7 +4,6 @@ import {
   addTodoRequest,
   addTodoSuccess,
   addTodoError,
-  deleteTodo,
   changeFilter,
   deleteTodoRequest,
   deleteTodoError,
@@ -12,9 +11,13 @@ import {
   toggleCompletedRequest,
   toggleCompletedSuccess,
   toggleCompletedError,
+  fetchTodosRequest,
+  fetchTodosSuccess,
+  fetchTodosError,
 } from './todos-actions';
 
 const items = createReducer([], {
+  [fetchTodosSuccess]: (_, { payload }) => payload,
   [addTodoSuccess]: (state, { payload }) => [...state, payload],
   [deleteTodoSuccess]: (state, { payload }) =>
     state.filter(({ id }) => id !== payload),
@@ -27,6 +30,9 @@ const filter = createReducer('', {
 });
 
 const loading = createReducer(false, {
+  [fetchTodosRequest]: () => true,
+  [fetchTodosSuccess]: () => false,
+  [fetchTodosError]: () => false,
   [addTodoRequest]: () => true,
   [addTodoSuccess]: () => false,
   [addTodoError]: () => false,

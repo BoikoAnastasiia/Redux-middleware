@@ -7,6 +7,8 @@ import Stats from '../components/Stats';
 import Modal from '../components/Modal';
 import IconButton from '../components/IconButton';
 import { ReactComponent as AddIcon } from '../icons/add.svg';
+import { connect } from 'react-redux';
+import todosOperations from '../redux/todos/todos-operations';
 
 const barStyles = {
   display: 'flex',
@@ -18,6 +20,9 @@ class TodosView extends Component {
   state = {
     showModal: false,
   };
+  componentDidMount() {
+    this.props.fetchTodos();
+  }
 
   toggleModal = () => {
     this.setState(({ showModal }) => ({
@@ -50,4 +55,8 @@ class TodosView extends Component {
   }
 }
 
-export default TodosView;
+const mapDispatchToProps = dispatch => ({
+  fetchTodos: () => dispatch(todosOperations.fetchTodos()),
+});
+
+export default connect(null, mapDispatchToProps)(TodosView);
