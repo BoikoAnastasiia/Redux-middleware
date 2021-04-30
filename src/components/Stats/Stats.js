@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './Stats.scss';
-import todosSelectors from '../../redux/todos/todos-selectors';
+import { todosSelectors } from '../../redux/todos';
 
 const Stats = ({ total, completed }) => (
   <div className="Stats">

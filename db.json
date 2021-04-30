@@ -1,29 +1,24 @@
 {
   "todos": [
     {
-      "id": "id-1",
-      "text": "Выучить основы React",
-      "completed": true
-    },
-    {
       "id": "id-2",
       "text": "Разобраться с React Router",
-      "completed": false
+      "completed": true
     },
     {
       "id": "id-3",
       "text": "Привыкнуть к Redux",
-      "completed": true
+      "completed": false
     },
     {
-      "text": "cx vdx",
+      "text": "listen to Repeta\n",
       "completed": true,
-      "id": "WxJag64"
+      "id": "l8lThq8"
     },
     {
-      "text": "ав",
+      "text": "finish epam",
       "completed": false,
-      "id": "4vtAoTW"
+      "id": "jpl4Mcu"
     }
   ]
 }

@@ -8,8 +8,7 @@ import Modal from '../components/Modal';
 import IconButton from '../components/IconButton';
 import { ReactComponent as AddIcon } from '../icons/add.svg';
 import { connect } from 'react-redux';
-import todosOperations from '../redux/todos/todos-operations';
-import todosSelectors from '../redux/todos/todos-selectors';
+import { todosOperations, todosSelectors } from '../redux/todos';
 import CounterButton from '../components/CounterButton';
 
 const barStyles = {

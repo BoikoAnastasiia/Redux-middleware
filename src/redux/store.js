@@ -8,7 +8,7 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import todosReducer from './todos/todos-reducer';
+import { todosReducer } from './todos';
 import counterReducer from '../redux/counter';
 
 // const myMiddleware = store => next => action => {

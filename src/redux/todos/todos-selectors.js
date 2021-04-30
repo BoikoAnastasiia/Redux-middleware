@@ -11,10 +11,14 @@ const getTotalTodoCount = state => {
   return todos.length;
 };
 
-const getCompeltedTodosCount = state => {
-  const todos = getAllTodos(state);
+// const getCompeltedTodosCount = state => {
+//   const todos = getAllTodos(state);
+//   return todos.reduce((total, todo) => (todo.completed ? total + 1 : total), 0);
+// };
+
+const getCompeltedTodosCount = createSelector([getAllTodos], todos => {
   return todos.reduce((total, todo) => (todo.completed ? total + 1 : total), 0);
-};
+});
 
 // const getVisibleTodos = state => {
 //   const todos = getAllTodos(state);
